@@ -26,7 +26,7 @@ jobs:
        github.event.sender.type != 'Bot' &&
        !contains(github.event.comment.body, '/sign-off') &&
        !contains(github.event.comment.body, '/autofix'))
-    uses: JWEB0689/pr-agent-settings/.github/workflows/pr_agent.yml@main
+    uses: JWEB0689/pr-agent-settings/.github/workflows/pr_agent.yml@d1c33aa3db8e922741bba912481cce758d789480 # main
     secrets:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
@@ -40,7 +40,7 @@ jobs:
        contains(github.event.comment.body, '/autofix') ||
        contains(github.event.comment.body, '- [x] <!-- muse-sign-off -->') ||
        contains(github.event.comment.body, '- [X] <!-- muse-sign-off -->'))
-    uses: JWEB0689/pr-agent-settings/.github/workflows/reusable_autofix.yml@main
+    uses: JWEB0689/pr-agent-settings/.github/workflows/reusable_autofix.yml@d1c33aa3db8e922741bba912481cce758d789480 # main
     with:
       mode: pr
       pr_number: ${{ github.event.issue.number }}
